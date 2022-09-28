@@ -1,0 +1,295 @@
+$green: #1cb278;
+$aqua: #f6fffa;
+$orange: #fa8e07;
+
+/**
+ * @description: 地方学校列表页
+ * @author: Herway
+ */
+
+.list-main.df-school {
+  margin-top: 0;
+  .head-h1 {
+    padding-bottom: 5px;
+    .tit {
+      &::before {
+        display: none;
+      }
+      &::after {
+        bottom: -7px;
+      }
+    }
+    .tit-r-tit {
+      display: none;
+    }
+  }
+}
+.list-con-a.df-school {
+  &::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 4px;
+    background-color: $orange;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 0 0 100% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-main.df-school {
+    .head-h1 {
+      flex-direction: row;
+      padding-bottom: 2px;
+      .tit {
+        &::before {
+          display: none;
+        }
+        &::after {
+          bottom: -4px;
+        }
+      }
+      .tit-r {
+        position: relative;
+        margin-top: 0;
+        width: auto;
+      }
+      .tit-r-tit {
+        position: relative;
+        text-align: center;
+        display: block;
+        width: 85px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 3px;
+        background: #edf9f5;
+        font-size: 14px;
+        color: #a6a2a2;
+        padding-right: 12px;
+        &::after {
+          position: absolute;
+          right: 8px;
+          top: 43%;
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px;
+          border-color: #a6a2a2 transparent transparent transparent;
+        }
+      }
+      .tit-r-item-current {
+        color: #fff;
+        background-color: $green;
+        border-radius: 0;
+        &::after {
+          display: none;
+        }
+      }
+      .tit-r-item {
+        height: 25px;
+        line-height: 25px;
+      }
+      .tit-r-con {
+        border-radius: 3px;
+        overflow: hidden;
+        z-index: 2;
+        position: absolute;
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #f1f4f8;
+      }
+    }
+  }
+  .list-con-a.df-school {
+    &::before {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      padding-left: 2px;
+    }
+  }
+}
+/* 地方学校列表页结尾 */
+
+/**
+ * @description: 地方专业列表页
+ * @author: Herway
+ */
+.df-list-con-li {
+  margin-top: 15px;
+  border: 1px solid #e1dfdf;
+  border-radius: 3px;
+  &:hover {
+    background-color: #f6fffa;
+  }
+}
+.df-major .list-con-a {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  margin-top: 0;
+  &:hover {
+    border: 0;
+  }
+  &::before {
+    content: attr(data-city);
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 30px;
+    white-space: nowrap;
+    height: 20px;
+    background-color: $orange;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 5px;
+    z-index: 2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 12px;
+    left: 42px;
+    width: 20px;
+    height: 20px;
+    background-color: $orange;
+    border-radius: 0 0 100% 0;
+  }
+  .mj-con-code {
+    font-size: 12px;
+    color: #a6a4a4;
+    margin: 12px 0;
+    &::before {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 5px;
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-image: url(../images/svg/home-df-major-code.svg);
+    }
+  }
+  .mj-con-kaishe {
+    font-size: 12px;
+    color: #a6a4a4;
+    &::before {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 5px;
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-image: url(../images/svg/home-df-major-num.svg);
+    }
+  }
+  .mj-con-kaishe-num {
+    color: $orange;
+  }
+}
+.df-major .list-con-kaishe {
+  align-items: center;
+  display: flex;
+  padding: 15px 0;
+  margin: 0 20px;
+  border-top: 1px dashed #e1dfdf;
+  .list-con-kaishe-tit {
+    font-size: 14px;
+    color: #929191;
+    flex-shrink: 0;
+    margin-right: 25px;
+  }
+}
+.list-con-kaishe-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .list-con-kaishe-box-a {
+    margin-top: 10px;
+    width: 330px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f6f6;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    p {
+      font-size: 14px;
+      color: #575656;
+      margin-left: 5px;
+    }
+  }
+}
+
+.sidebar-rank-title-count {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #a6a4a4;
+  & > span {
+    color: $orange;
+  }
+}
+@media (max-width: 768px) {
+  .df-list-con-li {
+    position: relative;
+    padding-bottom: 35px;
+    &:hover {
+      .list-con-kaishe-box-a {
+        border: 1px solid #f7f6f6;
+        background-color: #fff;
+      }
+    }
+    .list-con-btn {
+      position: absolute;
+      display: block;
+      bottom: 15px;
+      left: 6%;
+      width: 88%;
+      height: 25px;
+      line-height: 25px;
+    }
+  }
+  .df-major .list-con-a {
+    position: static;
+    .mj-con-code {
+      margin: 0;
+    }
+  }
+  .df-major .list-con-kaishe {
+    align-items: flex-start;
+    .list-con-kaishe-tit {
+      margin-right: 10px;
+    }
+  }
+  .list-con-kaishe-box {
+    li {
+      width: 100%;
+    }
+    .list-con-kaishe-box-a {
+      border: 1px solid transparent;
+      width: 100%;
+      height: auto;
+      padding: 2px 0;
+      justify-content: flex-start;
+      img {
+        margin-left: 10px;
+      }
+    }
+    & > li:first-child {
+      a {
+        margin-top: 0;
+      }
+    }
+  }
+}
+/* 地方专业列表页结尾 */
